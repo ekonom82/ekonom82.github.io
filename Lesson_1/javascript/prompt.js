@@ -8,5 +8,6 @@ window.onload = function() {
     let password = prompt(passwordTitle);
 
     // “Dear User, your email is usermale@gmail.com, your password is qwerty”
-    document.write("Dear {0}, your email is {1}, your password is {2}", name, email, password);
+    let result = `Dear ${name}, your email is ${email}, your password is ${password}`;
+    document.write(result);
 };
