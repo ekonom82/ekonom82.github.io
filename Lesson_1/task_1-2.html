@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_1-2</title>
+
+    <script src="javascript/alert-name.js"></script>
+</head>
+<body>
+    <button onclick="alert('Andrey')">html alert v.1</button>
+    <button id="button_1">html alert v.2</button>
+    <button id="button_2" onclick="showName()">js alert v.1</button>
+    <button id="button_3">js alert v.2</button>
+
+
+    <script>
+        function handler() {
+            alert('Andrey');
+        };
+
+        button_1.addEventListener("click", handler);
+    </script>
+</body>
+</html>
