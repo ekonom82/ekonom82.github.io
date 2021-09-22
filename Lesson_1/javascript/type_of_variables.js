@@ -4,6 +4,8 @@ window.addEventListener("load", function(){
     let birthday;
     let studyGroup;
 
+    const typesOfValue =  [`string`, `number`, `boolean`];
+
     name = "Andrey";
     surname = "Dorokhin";
     birthday = "10/12/1982"
@@ -11,36 +13,64 @@ window.addEventListener("load", function(){
 
     let isMaried = false;
 
-    console.log(typeof name);
-    console.log(typeof surname);
-    console.log(typeof birthday);
-    console.log(typeof studyGroup);
-    console.log(typeof isMaried);
+    console.log("type of name: " + typeof name);
+    console.log("type of surname: " + typeof surname);
+    console.log("type of birthday: " + typeof birthday);
+    console.log("type of studyGroup: " + typeof studyGroup);
+    console.log("type of isMaried: " + typeof isMaried);
 
-    let arr = [];
-    arr.push(name,surname,birthday,studyGroup,isMaried);
+    let arrayElements = [];
+    arrayElements.push(name,surname,birthday,studyGroup,isMaried);
 
-    printElementsOfType(arr, TypeValue.Number);
-    printElementsOfType(arr, TypeValue.Boolean);
-    printElementsOfType(arr, TypeValue.String);
+    printElementsOfType(arrayElements, typesOfValue);
+
+    // printElementsOfType(arrayElements, TypeValue.Number);
+    // printElementsOfType(arrayElements, TypeValue.Boolean);
+    // printElementsOfType(arrayElements, TypeValue.String);
 
     let nullValue = null;
     let undefinedValue;
 
-    console.log(typeof nullValue);
-    console.log(typeof undefinedValue);
+    console.log("type of nullValue: " + typeof nullValue);
+    console.log("type of undefinedValue: " + typeof undefinedValue);
 })
 
-function printElementsOfType(array, TypeValue) {
-    for (let i = 0; i < array.length; i++) {
-        if (typeof array[i] === TypeValue)
-            console.log(typeof array[i]);
+function printElementsOfType(arrayOfElements, arrayOfTypes) {
+    console.log("Begin showing elements in some order");
+    console.log("arrayOfElements: " + arrayOfElements);
+    console.log("arrayOfTypes: " + arrayOfTypes);
+
+    for (let i = 0; i < arrayOfTypes.length; i++) {
+        console.log("i: " + i);
+
+        for (let j = 0; j < arrayOfElements.length; j++) {
+            console.log("j: " + j);
+
+            if (typeof(arrayOfElements[j]) === arrayOfTypes[i]) {
+                // console.log("index i: "+ i + " / index j: " + j + " / typeof element j: " + typeof arrayOfElements[j] + " / expected type: " + arrayOfTypes[i]);
+
+                console.log(arrayOfElements[j]);
+            }
+
+        }
     }
+
+    console.log("End showing elements in some order");
 }
 
-// Number, Boolean, String
-enum TypeValue {
-    String,
-    Number,
-    Boolean
-}
+/*
+* enum is absent in JS. Only in TypeScript
+* */
+// function printElementsOfType(array, TypeValue) {
+//     for (let i = 0; i < array.length; i++) {
+//         if (typeof array[i] === TypeValue)
+//             console.log(typeof array[i]);
+//     }
+// }
+//
+// // Number, Boolean, String
+// enum TypeValue {
+//     String,
+//         Number,
+//         Boolean
+// }
